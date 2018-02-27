@@ -16,6 +16,7 @@ public class Mountain extends World
     private double scrollPosition = 0;
     
     int counter= 0;
+	
     
     // FOR GAME OVER
     public boolean gameEnded = false;
@@ -49,7 +50,7 @@ public class Mountain extends World
         
         counter++;
         //System.out.println(counter);
-        if(shouldAddBox && counter == 80){
+        if(shouldAddBox && counter == 90){
         Material material = new Material();
         addObject(material,getWidth(),455);
         counter = Greenfoot.getRandomNumber(50);
@@ -78,7 +79,22 @@ public class Mountain extends World
 
         fla = new Flamingo();
         addObject(fla,252,420);
-
+        Counter counter = new Counter();
+        addObject(counter,952,45);
+        counter.setLocation(862,41);
+        counter.setLocation(822,37);
+        HightScore hightscore = new HightScore();
+        addObject(hightscore,833,100);
+        hightscore.setLocation(830,99);
+        counter.setLocation(825,173);
+        hightscore.setLocation(964,27);
+        counter.setLocation(962,69);
+        hightscore.setLocation(872,27);
+        counter.setLocation(880,70);
+        counter.setLocation(875,73);
+        counter.setLocation(873,73);
+        hightscore.setLocation(933,33);
+        counter.setLocation(936,69);
     }
     
     public void started() {

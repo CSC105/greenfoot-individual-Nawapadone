@@ -16,10 +16,7 @@ public class GameOver extends Actor
     {
         // Add your action code here.
         //Greenfoot.setWorld(new Mountain());
-        if (Greenfoot.isKeyDown("space") )  
-      {  
-        Greenfoot.setWorld(new Mountain());
-      } 
+       
     
     }    
 }

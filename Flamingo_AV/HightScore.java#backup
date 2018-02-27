@@ -1,0 +1,22 @@
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+
+/**
+ * Write a description of class HightScore here.
+ * 
+ * @author (your name) 
+ * @version (a version number or a date)
+ */
+public class HightScore extends Actor
+{
+    /**
+     * Act - do whatever the HightScore wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.
+     */
+    public HightScore(){
+     setImage(new GreenfootImage("HS " + String.format("%05d", Counter.score2), 32, Color.GREEN, Color.BLACK));
+    }
+    public void act() 
+    {
+        
+    }    
+}

@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Material extends Actor
 {
     Mountain mountain;
-    
+ 
     public void addedToWorld(World world) {
         if (world instanceof Mountain)
             this.mountain = (Mountain) world;
@@ -32,9 +32,10 @@ public class Material extends Actor
             //Greenfoot.stop();
             mountain.addObject(new GameOver(), mountain.getWidth()/2, mountain.getHeight()/2);
 			mountain.addObject(new Playagain(), mountain.getWidth()/2,mountain.getHeight()-50);
+			
         }
     }
-    
+    	
     public void act() 
     {
         // Add your action code here.
@@ -42,8 +43,7 @@ public class Material extends Actor
         Touch();
         
     }
-    
-    
+   
      public void MoveBox(){
          setLocation(getX()-8, getY());    
         if (getX() == -10)
