@@ -36,10 +36,17 @@ public class Flamingo extends Actor
         imageNumber = ( imageNumber + 1 ) % images.length;
         setImage( images[imageNumber] );
      }
-     
+    
+    boolean cheatKeyPressed = true;
+    boolean cheatMode = false;
+    
+    boolean jumpPressed = false;
+    int jumpCount = 0;
+    static final int MAX_JUMP = 2;
+    
     public void Jump(){
         // Add your action code here.
-        int groundLevel =420;
+        int groundLevel = 420;
         boolean onGround = (getY() == groundLevel);
         if (!onGround) // in middle of jump
         {
@@ -50,18 +57,37 @@ public class Flamingo extends Actor
             if (getY()>=groundLevel) // has landed (reached ground level)
             {
                 setLocation(getX(), groundLevel); // set on ground
-                Greenfoot.getKey(); // clears any key pressed during jump
+                //Greenfoot.getKey(); // clears any key pressed during jump
            }
         }
         else // on ground
         {
-            if ("space".equals(Greenfoot.getKey())) // jump key detected
-            {
-                ySpeed = -20; // add jump speed
-                setLocation(getX(), getY()+ySpeed); // leave ground
-                //apexTimer = 1;  // set apex timer (adjust value to suit)
+            jumpCount = 0;
+        }
+        
+        if (Greenfoot.isKeyDown("c")) {
+            if (cheatKeyPressed == false) {
+                cheatMode = !cheatMode;
+                cheatKeyPressed = true;
             }
         }
+        else
+            cheatKeyPressed = false;
+        
+        if (Greenfoot.isKeyDown("space")) // jump key detected
+            {
+                if (jumpPressed == false && (cheatMode || jumpCount < MAX_JUMP)) {
+                    jumpPressed = true;
+                    jumpCount++;
+                    ySpeed = -20; // add jump speed
+                    setLocation(getX(), getY()+ySpeed); // leave ground
+                    //apexTimer = 1;  // set apex timer (adjust value to suit)
+                }
+                //System.out.println("JUMP!!");
+            }
+            else {
+                jumpPressed = false;
+            }
     }
     
      

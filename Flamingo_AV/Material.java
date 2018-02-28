@@ -9,13 +9,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Material extends Actor
 {
     Mountain mountain;
- 
+    static int num=8;
+    static int cNum=0;
     public void addedToWorld(World world) {
         if (world instanceof Mountain)
             this.mountain = (Mountain) world;
     }
     
-    public void Touch(){
+    public boolean Touch(){
         Actor t = getOneObjectAtOffset(0, 0, Flamingo.class);
         if (t!=null)
         {
@@ -28,25 +29,35 @@ public class Material extends Actor
                 Material m = mountain.boxes.get(i); // item @ index i in ArrayList
                 mountain.removeObject(m);
             }
-			mountain.shouldAddBox = false;
+            mountain.shouldAddBox = false;
             //Greenfoot.stop();
             mountain.addObject(new GameOver(), mountain.getWidth()/2, mountain.getHeight()/2);
-			mountain.addObject(new Playagain(), mountain.getWidth()/2,mountain.getHeight()-50);
-			
+            mountain.addObject(new Playagain(), mountain.getWidth()/2,mountain.getHeight()-50);
+            num = 8;
+            return true;
         }
+        return false;
     }
-    	
+        
     public void act() 
     {
         // Add your action code here.
-        MoveBox();
-        Touch();
-        
+        cNum++;
+        if(cNum==500){
+            num = num+1;
+            cNum = 0;
+        }
+        //System.out.println(num);
+        boolean touched = Touch();
+        if (!touched) {
+            MoveBox();
+        }
     }
    
      public void MoveBox(){
-         setLocation(getX()-8, getY());    
-        if (getX() == -10)
-            getWorld().removeObject(this);
+         setLocation(getX()-num, getY());
+
+        if (getX() <= -10)
+            getWorld().removeObject(this);   
         }
  }

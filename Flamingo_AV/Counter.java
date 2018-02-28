@@ -16,7 +16,7 @@ public class Counter extends Actor
             this.mountain = (Mountain) world;
     }
     public Counter(){
-     setImage(new GreenfootImage("S   " + String.format("%05d", (int) score1), 32, new Color(25,25,25), new Color(0, 0, 0, 0)));
+     setImage(new GreenfootImage("S   " + String.format("%05d", (int) score1), 32, new Color(255,255,255), new Color(0, 0, 0, 0)));
     }
     
     
@@ -36,7 +36,7 @@ public class Counter extends Actor
         
         //System.out.println(mountain.gameEnded);
        
-        setImage(new GreenfootImage("S   " + String.format("%05d", (int)score1), 32, new Color(25,25,25), new Color(0, 0, 0, 0)));
+        setImage(new GreenfootImage("S   " + String.format("%05d", (int)score1), 32, new Color(255,255,255), new Color(0, 0, 0, 0)));
         
     }    
 }

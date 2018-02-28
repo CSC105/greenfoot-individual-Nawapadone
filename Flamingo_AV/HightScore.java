@@ -13,7 +13,7 @@ public class HightScore extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public HightScore(){
-     setImage(new GreenfootImage("HS " + String.format("%05d", (int)Counter.score2), 32, new Color(25,25,25), new Color(0, 0, 0, 0)));
+     setImage(new GreenfootImage("HS " + String.format("%05d", (int)Counter.score2), 32, new Color(255,255,255), new Color(0, 0, 0, 0)));
     }
     public void act() 
     {

@@ -8,7 +8,7 @@ import java.util.ArrayList;
  */
 public class Mountain extends World
 {
-    private static final String bgImageName = "images/mountain.png";
+    private static final String bgImageName = "images/mountain2.png";
     private static final double scrollSpeed = 1;
     private static final int picWidth = (new GreenfootImage(bgImageName)).getWidth();
     
@@ -50,10 +50,10 @@ public class Mountain extends World
         
         counter++;
         //System.out.println(counter);
-        if(shouldAddBox && counter == 90){
+        if(shouldAddBox && counter == 85){
         Material material = new Material();
         addObject(material,getWidth(),455);
-        counter = Greenfoot.getRandomNumber(50);
+        counter = Greenfoot.getRandomNumber(48);
         boxes.add(material);
        }
     
@@ -76,23 +76,12 @@ public class Mountain extends World
     public Flamingo fla;
     private void prepare()
     {
-
         fla = new Flamingo();
         addObject(fla,252,420);
         Counter counter = new Counter();
         addObject(counter,952,45);
-        counter.setLocation(862,41);
-        counter.setLocation(822,37);
         HightScore hightscore = new HightScore();
         addObject(hightscore,833,100);
-        hightscore.setLocation(830,99);
-        counter.setLocation(825,173);
-        hightscore.setLocation(964,27);
-        counter.setLocation(962,69);
-        hightscore.setLocation(872,27);
-        counter.setLocation(880,70);
-        counter.setLocation(875,73);
-        counter.setLocation(873,73);
         hightscore.setLocation(933,33);
         counter.setLocation(936,69);
     }

@@ -27,13 +27,13 @@ public class Playagain extends Actor
          
        if (!mouseOver && Greenfoot.mouseMoved(this))  
         {  
-            setImage("playagain2.png");
+            setImage("playagain1.png");
             getImage().scale(414,63);
             mouseOver = true;  
          }  
          if (mouseOver && Greenfoot.mouseMoved(null) && ! Greenfoot.mouseMoved(this))  
          {  
-             setImage("playagain1.png");
+             setImage("playagain2.png");
              getImage().scale(414,63);
              mouseOver = false;  
          } 
@@ -46,15 +46,14 @@ public class Playagain extends Actor
         
          if (Greenfoot.mouseClicked(this) )  
       {
-          //num++;
-          //if(num >=100){
+        
            Greenfoot.setWorld(new Mountain());
            num = 0;
-          //}
+        
       }
          if (Greenfoot.isKeyDown("space") )  
       {  
-          //num++; 
+           
            Greenfoot.setWorld(new Mountain());
            num = 0;
           
