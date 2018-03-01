@@ -9,13 +9,23 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class StartGame extends World
 {
     GreenfootImage myImage;
+    GreenfootSound sound = new GreenfootSound("ThisGame.wav"); 
     /**
      * Constructor for objects of class StartGame.
      * 
      */
     public void act(){
-
+        sound.playLoop();
+        if(Greenfoot.isKeyDown("space")||Greenfoot.mouseClicked(start)){
+            sound.stop();
+        }   
     }
+    
+    public void stopped(){
+    sound.stop();
+    }
+    
+    
     public StartGame()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -23,14 +33,16 @@ public class StartGame extends World
         prepare();
       
     }
-
+    
+    
+    Start start;
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
      */
     private void prepare()
     {
-        Start start = new Start();
+        start = new Start();
         addObject(start,523,470);
         start.setLocation(509,464);
         FlaStart flastart = new FlaStart();

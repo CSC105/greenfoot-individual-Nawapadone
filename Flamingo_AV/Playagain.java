@@ -9,6 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Playagain extends Actor
     {
     boolean mouseOver = false;
+    GreenfootSound sound2 = new GreenfootSound("Loss.wav"); 
     public void addedToWorld(World world) {
         getImage().scale(414,63);
     }
@@ -24,7 +25,10 @@ public class Playagain extends Actor
     {
         // Add your action code here. 
         MouseInfo mouse = Greenfoot.getMouseInfo();  
-         
+        sound2.playLoop();
+        if(Greenfoot.isKeyDown("space")||Greenfoot.mouseClicked(this)){
+         sound2.stop();
+        }
        if (!mouseOver && Greenfoot.mouseMoved(this))  
         {  
             setImage("playagain1.png");
@@ -58,8 +62,7 @@ public class Playagain extends Actor
            num = 0;
           
       } 
-      
-       
+
     }
    } 
     

@@ -57,7 +57,7 @@ public class Material extends Actor
      public void MoveBox(){
          setLocation(getX()-num, getY());
 
-        if (getX() <= -10)
+        if (getX() <= -30)
             getWorld().removeObject(this);   
         }
  }
