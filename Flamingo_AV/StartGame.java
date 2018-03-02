@@ -16,7 +16,9 @@ public class StartGame extends World
      */
     public void act(){
         sound.playLoop();
-        if(Greenfoot.isKeyDown("space")||Greenfoot.mouseClicked(start)){
+        sound.setVolume(30);
+        if(Greenfoot.isKeyDown("space")||Greenfoot.mouseClicked(start)
+        ||Greenfoot.isKeyDown("enter")){
             sound.stop();
         }   
     }

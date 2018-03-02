@@ -20,14 +20,13 @@ public class Start extends Actor
         MouseInfo mouse = Greenfoot.getMouseInfo();  
          
         
-         if (Greenfoot.mouseClicked(this) )  
+         if (Greenfoot.mouseClicked(this)
+         ||Greenfoot.isKeyDown("space") 
+         ||Greenfoot.isKeyDown("enter"))  
       {
            Greenfoot.setWorld(new Mountain());    
       }
-         if (Greenfoot.isKeyDown("space") )  
-      {   
-           Greenfoot.setWorld(new Mountain());
-      } 
+      
         
        if (!mouseOver && Greenfoot.mouseMoved(this))  
         {  

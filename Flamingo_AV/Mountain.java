@@ -54,6 +54,7 @@ public class Mountain extends World
         paint((int) scrollPosition);
         
         sound.playLoop();
+        sound.setVolume(20);
         if(gameEnded == true){
           sound.stop();
         }
@@ -61,10 +62,17 @@ public class Mountain extends World
         counter++;
         //System.out.println(counter);
         if(shouldAddBox && counter == 85){
-        Material material = new Material();
-        addObject(material,getWidth(),455);
-        counter = Greenfoot.getRandomNumber(48);
-        boxes.add(material);
+            if(Greenfoot.getRandomNumber(4)==0){
+             Material material2 = new Material2();
+                addObject(material2,getWidth(),427);
+                counter = Greenfoot.getRandomNumber(48);
+                boxes.add(material2);
+            }else{
+                Material material = new Material();
+                addObject(material,getWidth(),455);
+                counter = Greenfoot.getRandomNumber(48);
+                boxes.add(material);
+            }
        }
        
        /*if(ground.getX() <= -ground.getImage().getWidth() / 2 ){

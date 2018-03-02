@@ -79,7 +79,7 @@ public class Flamingo extends Actor
                 if (jumpPressed == false && (cheatMode || jumpCount < MAX_JUMP)) {
                     jumpPressed = true;
                     jumpCount++;
-                    ySpeed = -20; // add jump speed
+                    ySpeed = -18; // add jump speed
                     setLocation(getX(), getY()+ySpeed); // leave ground
                     //apexTimer = 1;  // set apex timer (adjust value to suit)
                 }

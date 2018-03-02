@@ -26,7 +26,9 @@ public class Playagain extends Actor
         // Add your action code here. 
         MouseInfo mouse = Greenfoot.getMouseInfo();  
         sound2.playLoop();
-        if(Greenfoot.isKeyDown("space")||Greenfoot.mouseClicked(this)){
+        sound2.setVolume(40);
+        if(Greenfoot.isKeyDown("space")||Greenfoot.mouseClicked(this)
+        ||Greenfoot.isKeyDown("enter")){
          sound2.stop();
         }
        if (!mouseOver && Greenfoot.mouseMoved(this))  
@@ -48,21 +50,15 @@ public class Playagain extends Actor
             return;
         }
         
-         if (Greenfoot.mouseClicked(this) )  
+         if (Greenfoot.mouseClicked(this)||Greenfoot.isKeyDown("enter")
+         ||Greenfoot.isKeyDown("space"))  
       {
         
            Greenfoot.setWorld(new Mountain());
            num = 0;
         
       }
-         if (Greenfoot.isKeyDown("space") )  
-      {  
-           
-           Greenfoot.setWorld(new Mountain());
-           num = 0;
-          
-      } 
-
+         
     }
    } 
     
