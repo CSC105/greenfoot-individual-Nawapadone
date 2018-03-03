@@ -19,6 +19,5 @@ public class Ground extends Actor
     }    
     public void MoveGround(){
          setLocation(getX()-Material.num, getY());
-         //System.out.println(Material.num);
     }
 }

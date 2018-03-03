@@ -13,7 +13,6 @@ public class Flamingo extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     private int ySpeed;
-    //private int apexTimer;
     
    GreenfootImage[] images = new GreenfootImage[36];
    int imageNumber;
@@ -27,11 +26,7 @@ public class Flamingo extends Actor
         setImage( images[imageNumber] );
     }
     }
-    
-    /*public Actor getOneObjectAtOffset(int dx, int dy, java.lang.Class<?> cls) {
-        return super.getOneObjectAtOffset(dx, dy, cls);
-    }*/
-    
+
    public void Animation(){
         imageNumber = ( imageNumber + 1 ) % images.length;
         setImage( images[imageNumber] );
@@ -50,14 +45,12 @@ public class Flamingo extends Actor
         boolean onGround = (getY() == groundLevel);
         if (!onGround) // in middle of jump
         {
-            //if (ySpeed == -18 && apexTimer > 0) apexTimer--; // run apex timer
-            //if (ySpeed == 0 && apexTimer > 0) return; // apex timer still running
             ySpeed++; // adds gravity effect
             setLocation(getX(), getY()+ySpeed); // fall (rising slower or falling faster)
             if (getY()>=groundLevel) // has landed (reached ground level)
             {
-                setLocation(getX(), groundLevel); // set on ground
-                //Greenfoot.getKey(); // clears any key pressed during jump
+            setLocation(getX(), groundLevel); // set on ground
+            // clears any key pressed during jump
            }
         }
         else // on ground
@@ -81,9 +74,7 @@ public class Flamingo extends Actor
                     jumpCount++;
                     ySpeed = -18; // add jump speed
                     setLocation(getX(), getY()+ySpeed); // leave ground
-                    //apexTimer = 1;  // set apex timer (adjust value to suit)
                 }
-                //System.out.println("JUMP!!");
             }
             else {
                 jumpPressed = false;

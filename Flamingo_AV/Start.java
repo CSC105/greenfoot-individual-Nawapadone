@@ -16,10 +16,7 @@ public class Start extends Actor
     public void act() 
     {
         // Add your action code here.
-        
         MouseInfo mouse = Greenfoot.getMouseInfo();  
-         
-        
          if (Greenfoot.mouseClicked(this)
          ||Greenfoot.isKeyDown("space") 
          ||Greenfoot.isKeyDown("enter"))  
@@ -27,16 +24,15 @@ public class Start extends Actor
            Greenfoot.setWorld(new Mountain());    
       }
       
-        
-       if (!mouseOver && Greenfoot.mouseMoved(this))  
-        {  
-            setImage("Start1.png");
-            mouseOver = true;  
-         }  
-         if (mouseOver && Greenfoot.mouseMoved(null) && ! Greenfoot.mouseMoved(this))  
-         {  
-             setImage("Start2.png");
-             mouseOver = false;  
-         } 
+     if (!mouseOver && Greenfoot.mouseMoved(this))  
+     {  
+        setImage("Start1.png");
+        mouseOver = true;  
+     }  
+     if (mouseOver && Greenfoot.mouseMoved(null) && ! Greenfoot.mouseMoved(this))  
+     {  
+         setImage("Start2.png");
+         mouseOver = false;  
+     } 
     }    
 }

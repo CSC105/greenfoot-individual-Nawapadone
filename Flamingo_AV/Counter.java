@@ -33,10 +33,6 @@ public class Counter extends Actor
         if(score1>=score2){
             score2 = score1;
         }
-        
-        //System.out.println(mountain.gameEnded);
-       
         setImage(new GreenfootImage("S   " + String.format("%05d", (int)score1), 32, new Color(255,255,255), new Color(0, 0, 0, 0)));
-        
     }    
 }

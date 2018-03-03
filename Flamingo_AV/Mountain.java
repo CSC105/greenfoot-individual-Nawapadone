@@ -47,7 +47,7 @@ public class Mountain extends World
     
     public void act()
     {
-        //Greenfoot.playSound("theme.wav");
+        
         scrollPosition -= scrollSpeed;
         while(scrollSpeed > 0 && scrollPosition < -picWidth) scrollPosition += picWidth;
         while(scrollSpeed < 0 && scrollPosition > 0) scrollPosition -= picWidth;
@@ -60,7 +60,7 @@ public class Mountain extends World
         }
       
         counter++;
-        //System.out.println(counter);
+        
         if(shouldAddBox && counter == 85){
             if(Greenfoot.getRandomNumber(4)==0){
              Material material2 = new Material2();
@@ -75,21 +75,12 @@ public class Mountain extends World
             }
        }
        
-       /*if(ground.getX() <= -ground.getImage().getWidth() / 2 ){
-           removeObject(ground);
-       }
-       if (ground.getX() <= ground.getImage().getWidth() / 2) {
-           Ground g = new Ground();
-           addObject(g, getWidth() + ground.getImage().getWidth() / 2, 258);
-        }*/
         for (int i = 0; i < ground.length; i++) {
             if (ground[i].getX() <= -512) {
                 int diff = Math.abs(ground[i].getX() - (-512));
                 ground[i].setLocation(getWidth() + 512 - diff, ground[i].getY());
             }
         }
-    
-        //System.out.println(counter);
         
     }
     

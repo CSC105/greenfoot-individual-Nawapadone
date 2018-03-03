@@ -20,17 +20,14 @@ public class Material extends Actor
         Actor t = getOneObjectAtOffset(0, 0, Flamingo.class);
         if (t!=null)
         {
-            //do something
-            //world.removeObject(); 
+            //do something           
             mountain.removeObject(mountain.fla);
-            //mountain.removeObject(this);
             mountain.gameEnded = true;
             for (int i = 0; i < mountain.boxes.size(); i++) {
                 Material m = mountain.boxes.get(i); // item @ index i in ArrayList
                 mountain.removeObject(m);
             }
             mountain.shouldAddBox = false;
-            //Greenfoot.stop();
             mountain.addObject(new GameOver(), mountain.getWidth()/2, mountain.getHeight()/2);
             mountain.addObject(new Playagain(), mountain.getWidth()/2,mountain.getHeight()-50);
             num = 8;
@@ -47,7 +44,6 @@ public class Material extends Actor
             num = num+1;
             cNum = 0;
         }
-        //System.out.println(num);
         boolean touched = Touch();
         if (!touched) {
             MoveBox();

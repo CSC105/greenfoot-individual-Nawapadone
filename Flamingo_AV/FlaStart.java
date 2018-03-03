@@ -14,10 +14,6 @@ public class FlaStart extends Actor
      */
      GreenfootImage[] images = new GreenfootImage[36];
    int imageNumber;
-   
- 
-  
-    
     /*public Actor getOneObjectAtOffset(int dx, int dy, java.lang.Class<?> cls) {
         return super.getOneObjectAtOffset(dx, dy, cls);
     }*/
