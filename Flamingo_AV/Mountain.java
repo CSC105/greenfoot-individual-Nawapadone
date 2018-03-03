@@ -54,7 +54,7 @@ public class Mountain extends World
         paint((int) scrollPosition);
         
         sound.playLoop();
-        sound.setVolume(20);
+        sound.setVolume(30);
         if(gameEnded == true){
           sound.stop();
         }
